@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image:url(User_signup_background-img.png) ;
+    background-repeat:no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+    
+}
+.join{
+    font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+}
+#mint{
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.navbar {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #E3D8A0;
+    border-radius: 20px;
+    border-color: #2b051e;
+    width: 50%;
+    position: absolute;
+    top: 20px;
+    left: 280px;
+    border-width: 2px;
+    border-style: solid;
+    height: 55px;
+    padding-left:230px ;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li {
+    margin-right: 180px; 
+}
+
+.navbar ul li a {
+    color: black;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 399;
+    position: relative;
+    text-decoration: none;
+}
+
+.navbar ul li a:after {
+    content: "";
+    position: absolute;
+    background-color: rgb(227, 127, 6);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: rgb(108, 102, 102);
+}
+
+.navbar ul li a:hover:after {
+    width: 100%;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#signuhead {
+    font-size: 40px;
+    margin-top: 135px;
+    margin-left: 690px;
+    height: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #E3D8A0;
+}
+
+.inputplace {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+#usersubmit {
+    padding: 8px 20px;
+    background-color: #dd8c0a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 150px;
+    color: #2b051e;
+    font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+}
+
+#usersubmit:hover {
+    background-color: #ca8c29;
+}
+
+#createWalletBtn {
+    padding: 8px 20px;
+    background-color: #dd8c0a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 700px;
+    width: 200px;
+    color: #2b051e;
+    font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+}
+#createWalletBtn:hover {
+    background-color: #cd8e21;
+}
+#userform {
+    margin-top: 120px;
+    margin-left: 550px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.inputplace {
+    display: inline-block; /* Display input fields inline */
+    margin-right: 10px; /* Add some margin between input fields */
+}
+
+label {
+    display: inline-block; /* Display labels inline */
+    width: 120px; /* Set a fixed width for labels to align them */
+    text-align: right; /* Align text to the right */
+    margin-right: 10px; /* Add some margin between labels and input fields */
+}
+.inputplace {
+    background-color: #E3D8A0; 
+    border: 2px solid #2b051e; 
+    border-radius: 3px; 
+    padding: 8px; 
+    margin-bottom: 10px; 
+    width: 300px; 
+}
+
+.inputplace:focus {
+    outline: none; 
+    border-color: #2b051e; 
+}

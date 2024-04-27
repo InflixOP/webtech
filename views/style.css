@@ -1,0 +1,327 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image:url(home.png) ;
+    background-repeat:no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+    
+}
+a:-webkit-any-link {
+    color: #2b051e;
+    cursor: pointer;
+    text-decoration: none;
+}
+#creator_signup{
+    padding: 8px 20px;
+    background-color: #dd8c0a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    margin-top: 100px;
+    margin-left: 80%;
+    color: #2b051e;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+}
+
+#user_signup{
+    padding: 8px 20px;
+    background-color: #dd8c0a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    position: relative;
+    left: 1350px;
+    top: -60px;
+    color: #2b051e;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+}
+#title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    animation: fadein 2s ease-in-out; /* Apply animation */
+    color:#E3D8A0
+  }
+  
+  #metamint {
+    opacity: 0; /* Initially hide metamint */
+  }
+  
+  @keyframes fadein {
+    0% { opacity: 0; }
+    50% { opacity: 1; } /* Fade in "Welcome to" */
+    100% { opacity: 1; } /* Keep opacity 1 until the end */
+  }
+  
+#title{
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 90px;
+  text-align: center;
+  margin-top: 8%;
+}
+#about_us{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 40px;
+    margin-left: 200px;
+    margin-top: 20%;
+    margin-bottom: 0;
+    color: #E3D8A0;
+}
+.join{
+    font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+}
+#mint{
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.navbar {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navdiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #E3D8A0;
+    border-radius: 20px;
+    border-color: #2b051e;
+    width: 50%;
+    position: absolute;
+    top: 20px;
+    left: 280px;
+    border-width: 2px;
+    border-style: solid;
+    height: 55px;
+    padding-left:230px ;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li {
+    margin-right: 280px; /* Adjust as needed */
+}
+
+.navbar ul li a {
+    color: black;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 399;
+    position: relative;
+    text-decoration: none;
+}
+
+.navbar ul li a:after {
+    content: "";
+    position: absolute;
+    background-color: rgb(227, 127, 6);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: rgb(108, 102, 102);
+}
+
+.navbar ul li a:hover:after {
+    width: 100%;
+}
+#aboutus{
+    width: 100%; 
+    margin: 0 auto;
+    background-image: url('about.png');
+    background-size: 1200px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+
+#aboutus_text{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17px;
+    margin-left: 200px;
+    margin-top: 0; 
+    width: 75%;
+    padding-top: 50px;
+}
+#contact_us {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 40px;
+    color: #E3D8A0;
+    position: relative;
+    width: 270px;
+    top: 30px;
+    left: 600px;
+}
+
+#contactus {
+    background-image: url('Group 16.png');
+    background-size: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    margin-top: 30px;
+    padding-top: 30px; /* Adjust vertical padding */
+}
+
+#contactus{
+    width: 80%; 
+    margin: 0 auto;
+    background-image: url('Group 16.png');
+    background-size: 500px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    margin-left: 100px;
+    margin-top: 0;
+
+}
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 20px;
+}
+
+#contactForm label {
+    width: 100px; /* Adjust the width according to your preference */
+}
+
+#message{
+    position: relative;
+    top: -60px;
+}
+#contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea {
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+#contactForm input[type="submit"] {
+    width: 150px; /* Adjust the width according to your preference */
+    align-self: center;
+}
+
+#contactus_form{
+    margin-left: 400px;
+    padding-top: 26px;
+}
+
+.inputplace {
+    display: inline-block; /* Display input fields inline */
+    margin-right: 10px; /* Add some margin between input fields */
+    background-color: #E3D8A0; 
+    border: 2px solid #2b051e; 
+    border-radius: 3px; 
+    padding: 8px; 
+    margin-bottom: 10px; 
+    width: 300px; 
+}
+
+#usersubmit {
+    padding: 8px 20px;
+    background-color: #dd8c0a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    position: relative;
+    top: 40px;
+    left: -0px;
+    color: #2b051e;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+}
+#started{
+    position: relative;
+    top: 480px;
+    color:#E3D8A0 ;
+   width: 200px;
+   left: 630px;
+
+}
+#cre{
+    color: #E3D8A0;
+    text-decoration: none;
+    position: relative;
+    left: 10px;
+    font-size: 18px;
+}
+#cre a {
+    color: inherit; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+
+#cre a:hover {
+    color: #FFD966; 
+}
+
+#getting{
+padding: 8px 20px;
+    background-color: #dd8c0a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    color: #2b051e;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
+}
+#getting:hover {
+    background-color: #cd8e21;
+}
+#user_signup:hover {
+    background-color: #cd8e21;
+}
+#footer_text{
+    text-align: center;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    margin-top:40px;
+    margin-left: -20px;
+    color: #E3D8A0;
+}

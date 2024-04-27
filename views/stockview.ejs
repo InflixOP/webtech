@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stockview.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Dashboard User</title>
+    <script>
+        function showDropdown() {
+            var dropdown = document.getElementById("dropdown");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+
+        function logout() {
+            // Redirect to home page
+            window.location.href = "/";
+        }
+    </script>
+</head>
+
+<body id="body">
+    <div id="bord">
+        <nav class="navbar">
+            <div class="navdiv">
+                <ul>
+                    <li><a href="#" onclick="showDropdown()"><span class="join"><%= username %></span></a>
+                        <div id="dropdown" style="display: none;">
+                            <a href="#" onclick="logout()" id="log">Log Out</a>
+                        </div></li>
+                    <li><span id="mint">metamint</span></li>
+                    <li><a href="/"><span class="join">TokenView</span></a></li>
+                    <li><a href="/"><span class="join">History</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <img id="sea" src="Rectangle 15.png">
+    <input id="search" type="text" placeholder="search">
+    <div id="list">
+        <ul id="list1">
+            <li>Initial Value</li>
+            <li>Current Value</li>
+            <li>Total Returns</li>
+        </ul>
+        <ul id="list2">
+            <li>33 MATIC</li>
+            <li>45 MATIC</li>
+            <li>12 MATIC</li>
+        </ul>
+    </div>
+    <div id="card_container2">
+        <div id="image_holder">
+            <div id="image"></div>
+        </div>
+        <div id="image_bg">
+            <div id="card_text">
+                <div id="channel_title"><%= channelName %></div>
+                <div id="token_details">
+                    <div id="token_price">
+                        <div style="display: grid;grid-template-rows: 30px 40px;">
+                            <div class="token_detail_label">Price</div>
+                            <div class="token_detail_value"><p><%= tokenPrice %> MATIC</p></div>
+                        </div>
+                        <div id="token_volume">
+                            <div style="display: grid;grid-template-rows: 30px 40px;">
+                                <div class="token_detail_label">Volume</div>
+                                <div class="token_detail_value"><p><%= tokenVolume %>/500</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+ <html>
+<head>
+    <title>Sign Up</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.2.9/dist/web3.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="usersignup.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script>
+        function deploy() {
+            document.addEventListener('DOMContentLoaded', async function () {
+                const Web3 = window.Web3;
+                let web3;
+                const initWeb3 = async () => {
+                    if (window.ethereum) {
+                        web3 = new Web3(window.ethereum);
+                        await window.ethereum.enable();
+                    } else if (window.web3) {
+                        web3 = new Web3(window.web3.currentProvider);
+                    } else {
+                        console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+                        return null;
+                    }
+                    return web3;
+                };
+                
+                const createWalletBtn = document.getElementById('createWalletBtn');
+                createWalletBtn.addEventListener('click', async function (event) {
+                    event.preventDefault();
+                    await initWeb3();
+                    
+                    if (!web3) {
+                        console.error('Web3 is not initialized.');
+                        return;
+                    }
+                    const accounts = await web3.eth.getAccounts();
+                    
+                    if (accounts.length === 0) {
+                        console.error('MetaMask is not connected.');
+                        return;
+                    }
+                    const abi = [{"inputs":[{"internalType":"bytes32","name":"signupId","type":"bytes32"},{"internalType":"string","name":"name","type":"string"},{"internalType":"string","name":"email","type":"string"},{"internalType":"uint256","name":"phone","type":"uint256"},{"internalType":"uint256","name":"age","type":"uint256"},{"internalType":"string","name":"addr","type":"string"}],"name":"addUser","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"name":"signup","outputs":[{"internalType":"string","name":"name","type":"string"},{"internalType":"string","name":"email","type":"string"},{"internalType":"uint256","name":"phone","type":"uint256"},{"internalType":"uint256","name":"age","type":"uint256"},{"internalType":"string","name":"addr","type":"string"}],"stateMutability":"view","type":"function"}];
+                    const contractAddress = '0xD7ACd2a9FD159E69Bb102A1ca21C9a3e3A5F771B';
+                    const contract = new web3.eth.Contract(abi, contractAddress);
+                    
+                    const name = document.getElementById('username').value;
+                    const email = document.getElementById('useremail').value;
+                    const phone = parseInt(document.getElementById('usernumber').value);
+                    const age = parseInt(document.getElementById('userage').value);
+                    const addr = document.getElementById('usermetamaskid').value;
+                    
+                    try {
+                        const signupId = web3.utils.keccak256(web3.utils.randomHex(32));
+                        
+                        const result = await contract.methods.addUser(signupId, name, email,phone,age, addr)
+                            .send({ from: accounts[0] });
+                        
+                        console.log('Transaction successful! Transaction hash:', result.transactionHash);
+                        
+                        const userDetails = await contract.methods.signup(signupId).call();
+                        console.log('User Details:', userDetails);
+                    } catch (error) {
+                        console.error('Error signing up user:', error);
+                    }
+                });
+            });
+        }
+        function display(){
+            var x=document.getElementById("usersubmit")
+            x.style.display="block";
+            var y=document.getElementById("createWalletBtn")
+            y.style.display="none";
+        }
+        function checkuserform(){
+            var pass=document.getElementById("userpassword");
+            var name= document.getElementById("username");
+            if(name.value == ""){
+                alert("Please enter your name!");
+                return false;}
+            var Email=document.getElementById("useremail");
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z]{2,4})+$/;
+            if(!filter.test(Email.value)){
+                alert('please input a valid e-mail address!');
+                return false;
+            }
+            var phone=/^\d{10}$/;
+            var Phonenumber=document.getElementById("usernumber").value;
+            if (!phone.test(Phonenumber)) {  
+            	alert('Phone number is not in correct format! Please follow the format:  1234567890');    
+                 return false;  
+            }
+            var mid= document.getElementById("usermetamaskid");
+            if(mid.value == ""){
+                alert("Please enter your metamask id!");
+                return false;}
+            var age = document.getElementById("userage");
+            if(parseInt(age.value, 10) < 18){
+                alert("Age should be above 18");
+                return false;
+            } 
+            
+            else if(pass.value.length<3){
+                alert("minimum length of password should be 8 characters");
+                return false;
+            } 
+            return true;
+        }
+        deploy();
+    </script>
+</head>
+    <body id="body">
+        <div id="bord">
+            <nav class="navbar">
+                <div class="navdiv">
+    
+                    <ul>
+                        <li><a href="/creatorsignup"><span class="join">Creator</span></a></li>
+                        <li><span id="mint">metamint</span></li>
+                        <li><a href="/"><span class="join">Home</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+          <p id="signuhead">Signup</p>
+          <form id="userform" method="post" action="/usersignup">
+            <label for="username">Name</label>
+            <input class="inputplace" id="username" type="text" name="username" >
+            <br>
+            <label for="useremail">Email</label>
+            <input class="inputplace" id="useremail" type="email" name="useremail" >
+            <br>
+            <label for="usernumber">Number</label>
+            <input class="inputplace" id="usernumber" type="text" name="usernumber" >
+            <br>
+            <label for="userage">Age</label>
+            <input class="inputplace" id="userage" type="text" name="userage" >
+            <br>
+            <label for="usermetamaskid">Wallet ID</label>
+            <input class="inputplace" id="usermetamaskid" type="text" name="usermetamaskid">
+            <br>
+            <label for="userpassword">Password</label>
+            <input class="inputplace" id="userpassword" type="password" name="userpassword" required >
+            <br>
+            <input id="usersubmit" type="submit" value="Sign Up" style="display: none;">
+        </form>
+    
+    </form>
+    <button id="createWalletBtn" onclick="display()">Connect Wallet</button>
+</body>
+</html>

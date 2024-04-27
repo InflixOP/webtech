@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Sign In as User</title>
+        <script>
+            function checkuserform(){
+                var Email=document.getElementById("useremail");
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z]{2,4})+$/;
+            if(!filter.test(Email.value)){
+                alert('please input a valid e-mail address!');
+                return false;
+            }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="nav"><span id="">metamint</span>
+            <span id="homepage"><a href="/" >Home</a></span>
+          </div>
+          <div ><p id="signuhead">Welcome Back</p>
+        </div>
+          <form id="userform" method="post" action="/userlogin" onsubmit="return checkuserform()">
+            <img id="emlimg"src="Vector.svg" alt="">
+            <img id="psdimg"src="Group.svg" alt="">
+            <div>
+                
+            </div>
+            <input class="inputplace" id="useremail" type="email" name="useremail" placeholder="        Email"  /><br>
+            <input class="inputplace" id="userpassword" type="password" name="userpassword" placeholder="        Password" /><br>
+           
+            <input id="usersubmit" type="submit" value="Submit"/>
+
+            </form>
+            
+        </table>
+        
+    </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="userdashboard.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Dashboard User</title>
+    <script>
+        function ulgout(){
+            document.getElementById("uname").innerHTML = "<button id='lgbtn'>Log Out</button>";
+        }
+        function unm(){
+            document.getElementById("").innerHTML = "<%=username%>";
+        }
+        
+    </script>
+    <script>
+        function showDropdown() {
+            var dropdown = document.getElementById("dropdown");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+
+        function logout() {
+            // Redirect to home page
+            window.location.href = "/";
+        }
+    </script>
+</head>
+           
+<body id="body">
+    <div id="bord">
+        <nav class="navbar">
+            <div class="navdiv">
+                <ul>
+                    <li><a href="#" onclick="showDropdown()"><span class="join"><%= username %></span></a>
+                        <div id="dropdown" style="display: none;">
+                            <a href="#" onclick="logout()" id="log">Log Out</a>
+                        </div></li>
+                    <li><a href="/userbuy"><span class="join">BuyToken</span></a></li>
+                    <li><span id="mint">metamint</span></li>
+                    <li><a href="/stockview"><span class="join">TokenView</span></a></li>
+                    <li><a href="#"><span class="join">History</span></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+   <img id="sea" src="Rectangle 15.png">
+   <input id="search" type="text" placeholder="search">
+   <div >
+    <p id="topcreators">Top Creators</p>
+    <%for(let creator of creators){%>
+    <div id="imgtop">
+        <a href="/userbuy"><div id="card_container">
+            <div id="image_holder">
+              <div id="image">
+                <div id="change"><%=Number(creator.percentagedeflection).toFixed(2)%>%</div>
+              </div>
+            </div>
+            <div id="image_bg">
+              <div id="card_text">
+              <div id="channel_title"><%=creator.creatorname%></div>
+              <div id="token_details">
+                  <div id="token_price">
+                          <div style="display: grid;grid-template-rows: 30px 40px;">
+                              <div class="token_detail_label">Price</div>
+                              <div class="token_detail_value"><p><%=Number(creator.adjustedPricePerToken).toFixed(2)%></p></div>
+                          </div>
+                  <div id="token_volume">
+                      <div style="display: grid;grid-template-rows: 30px 40px;">
+                          <div class="token_detail_label">Volume</div>
+                          <div class="token_detail_value"><p><%=creator.tokens%></p></div>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+              </div>
+              </div>
+          </div>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    <%}%>
+   </div>
+   <div >
+    <p id="newcreators">New Creators</p>
+    <% for (let creator of naye) {%> 
+    <div id="imgnew">
+        <div id="card_container2">
+            <div id="image_holder">
+              <div id="image">
+                <div id="change"><%=Number(creator.percentagedeflection).toFixed(2)%>%</div>
+              </div>
+            </div>
+            <div id="image_bg">
+              <div id="card_text">
+              <div id="channel_title"><%=creator.creatorname%></div>
+              <div id="token_details">
+                  <div id="token_price">
+                          <div style="display: grid;grid-template-rows: 30px 40px;">
+                              <div class="token_detail_label">Price</div>
+                              <div class="token_detail_value"><p><%=Number(creator.adjustedPricePerToken).toFixed(2)%></p></div>
+                          </div>
+                  <div id="token_volume">
+                      <div style="display: grid;grid-template-rows: 30px 40px;">
+                          <div class="token_detail_label">Volume</div>
+                          <div class="token_detail_value"><p><%=creator.tokens%></p></div>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+              </div>
+              </div>
+          </div>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    <%}%>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div >
+        <p id="newcreators">My Holdings</p>
+        <% for (let creator of naye) {%> 
+        <div id="imgnew">
+            <div id="card_container2">
+                <div id="image_holder">
+                  <div id="image">
+                    <div id="change"><%=Number(creator.percentagedeflection).toFixed(2)%>%</div>
+                  </div>
+                </div>
+                <div id="image_bg">
+                  <div id="card_text">
+                  <div id="channel_title"><%=creator.creatorname%></div>
+                  <div id="token_details">
+                      <div id="token_price">
+                              <div style="display: grid;grid-template-rows: 30px 40px;">
+                                  <div class="token_detail_label">Price</div>
+                                  <div class="token_detail_value"><p><%=Number(creator.adjustedPricePerToken).toFixed(2)%></p></div>
+                              </div>
+                      <div id="token_volume">
+                          <div style="display: grid;grid-template-rows: 30px 40px;">
+                              <div class="token_detail_label">Token</div>
+                              <div class="token_detail_value"><p><%=mytoken%></p></div>
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+                  </div>
+              </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        <%}%>
+   </div>
+</body>
+
+</html>
